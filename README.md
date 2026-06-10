@@ -5,7 +5,7 @@ solving Leetcode problems systematically topic wise
 
 # | Two Pointers | 5 / 5 |
 
-# | Sliding Window | 2 / 5 |
+# | Sliding Window | 5 / 5 |
 
 ## Resources
 - [NeetCode Roadmap](https://neetcode.io)
