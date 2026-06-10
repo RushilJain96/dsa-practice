@@ -62,3 +62,22 @@
 - every new element you see you add it in your window and find the length of the substring found till now 
 - always store max length 
 - if duplicate is found you start moving your left pointer and remove elements from window until the starting duplicate is not removed  
+
+## longest repeating character duplicate 
+- need maximum valid window
+- replacement needed is window_size- most frequent character which sould always be less than and equal to k 
+- expand by moving right till condition is sattisifed 
+- if invalid start moving 9inwards with your left pointer and note you max window size always 
+
+## Permuatation In String
+- remember that window size is always len(s1) as permutations will have length preserved
+- build and check fr the first window 
+- after that for each move build right and check counter 
+- remove left if doesnt match and keep moving forward
+
+## Minimum Window Subsring
+- we need frequency requirement to be satisfied not the exact string match 
+- take variable need which is the number of unique elements and variable have which strores number of  currently satisfied requirements 
+- valid window is when have== need and keep moving left to reduce the size as we need minimum window
+- if it becomes invalid again after shrinking keep moving right until valid again and track minimum track always 
+- for every character you check of s keep checking the counter you are making with the counter of gthe substring t for ensuring all the characters are included in the window 
