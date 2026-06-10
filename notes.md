@@ -48,6 +48,9 @@
 - for traversal if height at left is leass than at right then we process left
 - process meaning we again find see if the left max has changed or not for each increase in left we do in the previous iterationns andalways calculate area based on the max left value 
 
+## Sliding Window
+- whenever you see atmost k changes or replacements think sliding window  
+
 ## best time to buy and sell stock
 - while traversng the prices, always find the samllest price and store it 
 - profit= price - min price 
