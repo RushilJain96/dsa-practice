@@ -22,7 +22,9 @@
 ## encode_decode string
 - for encoding multiple strings into one use their length
 - new string should have (length of string + seperator + string)
-- for decoding just traverse till u find the seperator read the number and read that many characters to find the string  
+- for decoding just traverse till u find the seperator read the number and read that many characters to find the string 
+
+---------------------------------------------------------------------------------------------
 
 ## valid_palindrome
 - use isalnum() to check if a character is an alphanumeric character or not 
@@ -47,6 +49,8 @@
 - water at any index is the min of the max boundaries (left and right) subtracted by the height at that index
 - for traversal if height at left is leass than at right then we process left
 - process meaning we again find see if the left max has changed or not for each increase in left we do in the previous iterationns andalways calculate area based on the max left value 
+
+---------------------------------------------------------------------------------------------
 
 ## Sliding Window
 - whenever you see atmost k changes or replacements think sliding window  
@@ -81,3 +85,30 @@
 - valid window is when have== need and keep moving left to reduce the size as we need minimum window
 - if it becomes invalid again after shrinking keep moving right until valid again and track minimum track always 
 - for every character you check of s keep checking the counter you are making with the counter of gthe substring t for ensuring all the characters are included in the window 
+
+--------------------------------------------------------------------------------------
+
+## Binary Search
+- standard find mid using low+high//2 
+- move left if target is less than mid and right otherwise
+
+## Search 2D matrix
+- optimally combine and consider it as one whole array and apply binary search
+- otherwise find mid of matrix and check if value is between the first and last element of that mid
+- if it is use binary search in that array
+- otherwise move left if target is less than first element of mid and update or move right similiarly
+
+## Koko eating banana
+- we are searching min speed k so we apply binary search on the range of values of k 
+- range starts from 1 with 1 being the min speed and max is the max value in piles 
+- number of hours is the cieling value of number of bananas in pile divided by k 
+- ciel can also be written as (piles[i]+k-1)//k instead of math.ciel(piles[i]/k)
+- if hours is less than h then we can move slower and vice versa 
+
+## Find min in Rotated Sorted array
+- we again take high and low variables as the first and last element 
+- store a minimum variable that calculates the min for each binary operation between the current mid and the old minimum 
+- check if your middle element is less than or greater than the last element
+- if it is less means smaller element can be in the left side not in the right 
+- if it is greater that means element is in the right side it could also be the middle element so thats why we store min element
+- another way is to not calculate minimum but return low by using slightly different conditions accordingly
