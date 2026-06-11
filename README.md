@@ -7,5 +7,7 @@ solving Leetcode problems systematically topic wise
 
 # | Sliding Window | 5 / 5 |
 
+# | Binary Tree | 4 / 7 |
+
 ## Resources
 - [NeetCode Roadmap](https://neetcode.io)
