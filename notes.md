@@ -112,3 +112,25 @@
 - if it is less means smaller element can be in the left side not in the right 
 - if it is greater that means element is in the right side it could also be the middle element so thats why we store min element
 - another way is to not calculate minimum but return low by using slightly different conditions accordingly
+
+
+## Search in rotated sorted array
+- main method is to find the part that is sorted 
+- if the left is smaller than the mid element it means that the left side of the mid is sorted 
+- if the target lies between the left and mid then perform binary search there otherwise move left to mid+1
+- similiarly if right is greater than mid then the right side of mid is sorted and target lies between right and mid , perform binary search there
+- otherwise move right to mid-1
+
+## Time Based Key Value Store
+- timestamps are inserted in increasing order so each timestamp is already sorted 
+- in set simply append, if key is not there add it and then simply append value and timestamp
+- for get() , the largest timestamp<=  given timestamp
+- we find the last value which is smaller or equal to the target
+- if timestamp at mid is smaller than the target we store the value and move left to find a timestamp greater than this that might satisfy the condition
+
+## Median of two sorted arrays
+- goal is to find the correct partition that is all left side elements <= right side elements
+- mark the two arrays num1 and num2 as A and B where A represnts the smaller one out of the two
+- partition is valid when Aleft<= Bright and Aright>= Bleft 
+- if Aleft> Bright then partition is too left and we have to shift right to i-1 and if Bleft> Aright then move right 
+- if total len is odd the median is min(Aright, Bright) and if its even it is max(Aleft, Bleft)+ min(Aright,Bright)/2.0
