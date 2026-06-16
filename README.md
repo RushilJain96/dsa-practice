@@ -9,5 +9,8 @@ solving Leetcode problems systematically topic wise
 
 # | Binary Search | 7 / 7 |
 
+# | Linked List | 4 / 11 |
+
+
 ## Resources
 - [NeetCode Roadmap](https://neetcode.io)
