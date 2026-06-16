@@ -1,3 +1,9 @@
+# Problem: Merge Two Sorted Lists (#21)
+# Difficulty: Easy
+# Pattern: Dummy Node + Two Pointer Merge
+# Time Complexity: O(n) | Space Complexity: O(1)
+# Link: https://leetcode.com/problems/merge-two-sorted-lists/
+
 # Definition for singly-linked list.
 class ListNode(object):
      def __init__(self, val=0, next=None):

@@ -1,3 +1,9 @@
+# Problem: Remove Nth Node From End (#19)
+# Difficulty: Medium
+# Pattern: Two Pointer Gap Technique + Dummy Node
+# Time Complexity: O(n) | Space Complexity: O(1)
+# Link: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
 # Definition for singly-linked list.
 class ListNode(object):
      def __init__(self, val=0, next=None):

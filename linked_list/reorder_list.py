@@ -1,3 +1,10 @@
+# Problem: Reorder List (#143)
+# Difficulty: Medium
+# Pattern: Slow/Fast Pointer + Reversal + Merge
+# Time Complexity: O(n) | Space Complexity: O(1)
+# Link: https://leetcode.com/problems/reorder-list/
+
+
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, val=0, next=None):
