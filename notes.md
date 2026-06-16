@@ -134,3 +134,35 @@
 - partition is valid when Aleft<= Bright and Aright>= Bleft 
 - if Aleft> Bright then partition is too left and we have to shift right to i-1 and if Bleft> Aright then move right 
 - if total len is odd the median is min(Aright, Bright) and if its even it is max(Aleft, Bleft)+ min(Aright,Bright)/2.0
+
+
+---------------------------------------------------------------------------------------------
+#### Important Linked list Notes
+- curr= curr.next changes where the pointer points and doesnt modify the list
+- curr.next=something brings changes to the list 
+- whenever you make a dummy listnode at the end return dummy.next as that is the point from where the head starts 
+
+## Reverse Linked List
+- we used a 3 pointer technique where we store a previous element as well while moving the curr pointer
+- every iteration nxt points to curr.next and curr.next points to prev
+- This way opposite linked list keeps getting formed and then prev becomes curr and curr becomes nxt
+
+## Merge Two Sorted List
+- we use a dummy node + tail pointer
+- always connect the smaller value by comparing both the lists value and adding it to tail->next
+- after each iteraion move the tail ahead and list1 or list2 based on whose value we are taking
+- if some elements remain in any of the list add them at the end of the tail
+- REMEMBER: tail.next= list1 doesnt copy the value but connects the entire node 
+
+## Reorder List
+- we use slow and fast pointers to find the middle 
+- instead of reversing the whole list we just reverse the second part which is the part after the middle 
+- split using second= slow.next and slow.next= None
+- Then we alternate merge by adding one element alternatively by taking two temporary variables storing the next of both the split parts 
+
+## Remove Nth Node From The End Of The List
+- One way is to find the length of the list by first traversing the list and then finding length
+- Then traversing to the position just before the node to remove and changing its next to next.next. This takes two passes
+- We use dummy to handle cases of deletion of head node 
+- Better Solution is use two pointers : Fast moves n steps ahead and then slow and fast move together
+- when fast reaches the end slow points to the node just before the target and thus we can delete it  like above (slow starts from dummy and fast from head)
