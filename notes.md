@@ -166,3 +166,33 @@
 - We use dummy to handle cases of deletion of head node 
 - Better Solution is use two pointers : Fast moves n steps ahead and then slow and fast move together
 - when fast reaches the end slow points to the node just before the target and thus we can delete it  like above (slow starts from dummy and fast from head)
+
+## Copy List With Random Pointer
+- Use a hash map to make a copy of each already existing nodes this will store mapping
+- for the first pass create all copied nodes
+- in the second pass, connect pointers like set the next and random pointers of the copied nodes by getting it from the hash map
+- hash map acts as a translator for original node to copied node 
+- use get() to get value from hash map as in cases of none it doesnt give error but returns None 
+
+## Add Two Numbers
+- At every position we find the digit value of both the lists if list has not reached none otherwise assign it 0 and find the sum 
+- total includes the two digits and the carry as well
+- value(total%10) to be added and carry(total//10) are again calculated 
+- each result is added onto the tail as a node and tail is moved forward
+- we also check if any list is finished if they are not only then we move them forward 
+- the while conditions continjes till the lists or carry are not finished
+
+## Linked List Cycle
+- It used Floyd's Tortoise and Hare algorithm
+- take two pointers slow and fast and move them such that fast moves 2* speed of slow 
+- if a cycle exists eventually slow and fast will meet otherwise while fast is not None we keep checking 
+
+## Find The Duplicate Number
+- It used Floyd's Cycle Detection on an array 
+- Key insight is that we treat nums[i] as a next pointer like in a linked list so whenever there is a duplicate element it tells us that there is a cycle
+- Also since the numbers are in range of the indexes it gives a hint that they can be treated as pointers
+- First we find the meeting point by taking slow=nums[slow] and fast= nums[nums[fast]]
+- Remember meeting point is not the duplicate it could be some point inside the cycle
+- In phase-2 we reset slow=0 and fast=meeting point and then we traverse one step at a time 
+- it is the mathematical property of Floyd's algo that distance from the start to cycle start point is same as the dist from the meeting point inside cycle to the start so eventually they will meet again at the cycle starting point 
+- it takes constant space 
