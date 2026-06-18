@@ -196,3 +196,30 @@
 - In phase-2 we reset slow=0 and fast=meeting point and then we traverse one step at a time 
 - it is the mathematical property of Floyd's algo that distance from the start to cycle start point is same as the dist from the meeting point inside cycle to the start so eventually they will meet again at the cycle starting point 
 - it takes constant space 
+
+## LRU Cache
+- Hash map gives O(1) lookup but doesnt tell us the least recently used item hence we use a doubly linked list as once we know a node we can insert or remove it in O(1) time (no traversal is required)
+- Hash map stores the key to the node and doubly linked list tracks the usage order left being the least recently used and right the mru
+- for deletion just store the next of the prev node as next and the prev of the next node as node.prev
+- for get(key) function find the node using the hashmap remove the node, reinsert it at mru position and return value
+- for put(key, value) if key exists remove the old node and insert updated node if capacity exceeds remove left.next because it has lru node
+
+## Merge K Sorted Lists
+- instead of merging one by one we merge the lists in pairs
+- main condition is we keep merging till length of lists is greater than one and the inner loop runs in intervals of k
+- in the inner loop for each inner i we assign i to l1 and if i+1 is in bunds we assign i+1 to l2 and then apply merging and sorting on both the lists through a different function
+- that function works the same as the problem of merging two independent sorted lists
+- the returned list is appended in a merged list which is copied to the original list given 
+
+## Reverse Nodes In K Group
+- Main problem pattrn is Finfthe Kth node , reverse the segment reconnect and repeat
+- Important pointers we use include groupPrev that stores the Node before the current group which is being reversed
+- Kth is a variable used to find the last node of the current group
+- groupNext is the first node after the current node basically kth.next
+- tmp is the old head of the group , after reversal old head= tail of the group , it is used to move the groupPrev= tmp
+- Dummy head is needed as the head may change  after the first reversal 
+- Always save thenext groups start before reversing and then reverse 
+- Most importantly usually prev= None when we reverse a full list but here we assign prev= groupNext as after reversing we want the reversed groups tail to already point to groupNext 
+
+
+---------------------------------------------------------------------------------------------
