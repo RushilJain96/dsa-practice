@@ -9,7 +9,7 @@ solving Leetcode problems systematically topic wise
 
 # | Binary Search | 7 / 7 |
 
-# | Linked List | 8 / 11 |
+# | Linked List | 11 / 11 |
 
 
 ## Resources
