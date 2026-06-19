@@ -11,6 +11,8 @@ solving Leetcode problems systematically topic wise
 
 # | Linked List | 11 / 11 |
 
+# | Trees | 6 / 15 |
+
 
 ## Resources
 - [NeetCode Roadmap](https://neetcode.io)
