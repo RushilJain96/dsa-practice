@@ -1,3 +1,11 @@
+# Problem: Same Tree (#100)
+# Difficulty: Easy
+# Pattern: DFS Tree Comparison
+# Time Complexity: O(n)
+# Space Complexity: O(h)
+# Link: https://leetcode.com/problems/same-tree/
+
+
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, val=0, left=None, right=None):

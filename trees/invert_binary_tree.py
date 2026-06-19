@@ -1,3 +1,10 @@
+# Problem: Invert Binary Tree (#226)
+# Difficulty: Easy
+# Pattern: DFS Recursion / Tree Traversal
+# Time Complexity: O(n)
+# Space Complexity: O(h)
+# Link: https://leetcode.com/problems/invert-binary-tree/
+
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, val=0, left=None, right=None):
