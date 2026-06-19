@@ -137,7 +137,7 @@
 
 
 ---------------------------------------------------------------------------------------------
-#### Important Linked list Notes
+## Important Linked list Notes
 - curr= curr.next changes where the pointer points and doesnt modify the list
 - curr.next=something brings changes to the list 
 - whenever you make a dummy listnode at the end return dummy.next as that is the point from where the head starts 
@@ -221,5 +221,43 @@
 - Always save thenext groups start before reversing and then reverse 
 - Most importantly usually prev= None when we reverse a full list but here we assign prev= groupNext as after reversing we want the reversed groups tail to already point to groupNext 
 
+----------------------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------
+## TREE
+- Whenever using recusrsion, dont forget to add the base case 
+- Recusrsion function can return information upward and update a global variable
+
+## Invert Binary Tree
+- For evert node , we swap the left and right child then recursively invert the left and right subtree
+- invert(node)= swap(left, right) + invert(left) + invert(right)
+
+## Maximum Depth Of Binary Tree
+- Core idea is asking how deep is my left subtree and how deep is my right subtree
+- current node depth is 1+max(left depth , right depth)
+- we add 1 for the node itself
+- parent only needs one info that is height of child subtree
+
+## Diameter Of Binary Tree
+- we consider height of leaf node to be 1 and if node is null we return 0
+- diameter through any node is the sum of left and right height
+- we add a helper height function that returns the height and a global variable that stores maximum diameter
+
+## Balanced Binary Tree
+- Every node must satisfy the condition abs(height(left)-height(right))<=1
+- We use a helper function height that returns the height or -1 indicating that tree is unbalanced
+- if left or right ==-1 then we return -1 meaning once imbalance is found propogate it upwards
+
+## Same Tree
+- Trees are same if:
+- 1. Both are none
+- 2. Values match
+- 3. Left and right subtrees match
+- Each recursive call returns true or false and the parent combines the answer
+
+## Subtree Of Another Tree
+- For every node in root we check with a helper function isSameTree(node, subRoot)
+- if any comparison return true return true
+- So pattern is current matches or search left or search right 
+- return left or right as if any of left or right returns true means subtree exists
+
+
