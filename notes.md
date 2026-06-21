@@ -260,4 +260,20 @@
 - So pattern is current matches or search left or search right 
 - return left or right as if any of left or right returns true means subtree exists
 
+## Binary Tree Level Order Traversal
+- We use a queue for bfs as it processes a tree level by level
+- Add the root to the queue and process all the nodes currently in the queue
+- add their children and repeat until queue is empty
+- maintain a level size that stores the length of the current queue and we process only that many nodes
 
+## Lowest Common Ancestor Of A Binary Search Tree
+- at every node we check three conditions
+1. if both the nodes(p and q) are smaller than the current node we move left
+2. if both nodes are larger then node is in the right ssubtree hece move right 
+3. if nodes p and q split that is one in left and one in right this means we are at the lca node and thus return node 
+
+- general solution involves checking different conditions
+1. if root is equal to p or q we return the root
+2. then we recusrsively check the left and right 
+3. if (both left and right) condition holds means root is at a split hence return root
+- else if only one side finds something return left or right and pass it upwards 
