@@ -11,7 +11,7 @@ solving Leetcode problems systematically topic wise
 
 # | Linked List | 11 / 11 |
 
-# | Trees | 10 / 15 |
+# | Trees | 15 / 15 |
 
 
 ## Resources
