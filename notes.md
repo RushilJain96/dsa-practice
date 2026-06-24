@@ -304,7 +304,7 @@
 - so we perform inorder traversal( left, root, right) recusrsion on left and right and append the root val 
 - then return the kth element from the list
 
-## Construct Binary Tree FRom Preorder and Inorder
+## Construct Binary Tree From Preorder and Inorder
 - There are two ways to solve this 
 1. O(n^2) Method
     1. First element of preorder always gives the root
@@ -313,4 +313,29 @@
 
 2. O(n) Method
     1. Instead of using index() function, we maintain an inorder hash map to instantly get index of root node
-    
+    2. We also take maintain an index for the preorder list
+    3. Add a helper function build() which takes in the left and right indexes (extremes) of both left and right subtree and then stores the root and finds the root index using the dictionary and recursively calls the left and right by passing the necessary indexes
+
+## Binary Tree Maximum Path Sum
+- Use DFS + the pattern of maintaining a global answer
+- Path doesnt need to start at root or end at leaf 
+- At every node 
+ - Value returned upward is the best path usable by the parent which is the node.val+ max(left, right)
+ - parent can only continue at one branch and not split
+- value used for the answer is the path passing through the node which is left + node.val+ right 
+- here it can use both the branches 
+- Never include negative gain hence whenever you find left or right you choose the max value between what you got from the recursive one and zero 
+
+## Serialize And Deserialize Binary Tree
+- Use BFS + Reconstruction
+- For Serialization:
+    - Perform level order traversal and store the node values as string
+    - if value is null store them as 'N' since without null markers many diiferent trees become identical hence we need structure information
+    - use join() to return the whole as a string
+- For Deserialization:
+    - use split() to seperate the string 
+    - use a queue - every node consumes next left child and next right child from serialized data
+    - while queue exists starting from the second element since first is already stored as root 
+        - if value is not 'N' then we add that value as the left of the node we popped from the queue and move forward
+        - again if value is not 'N' we add the value to the right of the node we popped and the right to the queue and move forward
+        - this continues till the queue is not empty 
