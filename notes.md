@@ -277,3 +277,40 @@
 2. then we recusrsively check the left and right 
 3. if (both left and right) condition holds means root is at a split hence return root
 - else if only one side finds something return left or right and pass it upwards 
+
+## Binary Tree Right Side View
+- we need the first node visible from the right side at every depth doesnt matter if its in the right or left subtree
+- one way is to perform normal bfs(level order traversal) using queue 
+- we store the level size for each level we traverse so whenever i is equal to the level size meaning we have reached the last element of that level we append it to the result list  
+
+## Count Good Nodes In Binary Tree
+- This is where we use dfs and the pattern of transporting info from ancestors to children
+- a node is good if its value is greater or equal to the max value seen on that path 
+- so current root needs informations from ancestors and not children
+- we maintain a variable max_so_far that keeps track of the max value seen so far
+- if value of node is greater or equal to max-so_far then we make good=1 else good=0
+- max_so_far is updated in each iteration by finding max between current node val and previous max_so_far
+- final answer returned is the good(of that current node) + left +right
+
+## Validate Binary Search Tree
+- we perform dfs with range constraints
+- just checking if node.left< node< node.right is not sufficient we need to check if all nodes in left subtree are less than the root and similiar for right
+- so every node must stay within a range defined by low< node.val< high
+- when we dfs left then we update high to current node value and when we go right we updae low to current node val
+- if node doesnt fall in the range we return false else true 
+
+## Kth Smallest Element In BST
+- Most important thing to remember here is that inorder traversal of a BST gives elements in a sorted way 
+- so we perform inorder traversal( left, root, right) recusrsion on left and right and append the root val 
+- then return the kth element from the list
+
+## Construct Binary Tree FRom Preorder and Inorder
+- There are two ways to solve this 
+1. O(n^2) Method
+    1. First element of preorder always gives the root
+    2. We find the index of the root(using .index() which takes O(n) time) in the given inorder traversal since inorder is of the form (left | root | right)
+    3. Then we recursively pass the new preorder and inorder lists by specifying the indexes range
+
+2. O(n) Method
+    1. Instead of using index() function, we maintain an inorder hash map to instantly get index of root node
+    
