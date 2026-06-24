@@ -13,6 +13,8 @@ solving Leetcode problems systematically topic wise
 
 # | Trees | 15 / 15 |
 
+# | Heap | 4 / 10 |
+
 
 ## Resources
 - [NeetCode Roadmap](https://neetcode.io)
