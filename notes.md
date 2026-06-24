@@ -339,3 +339,5 @@
         - if value is not 'N' then we add that value as the left of the node we popped from the queue and move forward
         - again if value is not 'N' we add the value to the right of the node we popped and the right to the queue and move forward
         - this continues till the queue is not empty 
+
+----------------------------------------------------------------------------------------------------------------------------------
