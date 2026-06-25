@@ -224,8 +224,8 @@
 ----------------------------------------------------------------------------------------------------------------------
 
 ## TREE
-- Whenever using recusrsion, dont forget to add the base case 
-- Recusrsion function can return information upward and update a global variable
+- Whenever using recursion, dont forget to add the base case 
+- Recusrsion function can return information upward and downward and update a global variable
 
 ## Invert Binary Tree
 - For evert node , we swap the left and right child then recursively invert the left and right subtree
@@ -341,3 +341,35 @@
         - this continues till the queue is not empty 
 
 ----------------------------------------------------------------------------------------------------------------------------------
+
+## HEAPS & PRIORITY QUEUE
+- heeapq is imported to perform heap functions
+- python by default stores a min heap to get a max heap use negative values 
+- heapq.heapify(list)---> it is used to turn a list into a heap O(n)
+- heapq.heappop(list)---> used to pop the smallest element in the heap + reorganize the heap after removing O(log n)
+- heapq.heappush(list, val)----> used to add the val in the heap + reorganise it as well O(log n)
+- using heap of tuples [(1, 'a'), (2, 'b')] sorts by the first element 
+
+## Kth Largest Element In A Stream
+- we dont need all elements seen so far , we only need the largest k elements 
+- The smallest element among these k elements is the kth largest overall
+- Maintain a min heap of size k , root of the heap always stores the kth element 
+- push the val in the heap, if size increases than k then heappop and return heap[0]
+
+## Last Stone Weight
+- We need to rapidly check the largest andthe smallest stone so we maintain a max heap
+- Simulate a max heap by storing negative values hence the largest stone now appears at the root
+- While heap size is >1 we pop the largest and second largest element 
+- If both are not equal we find the diff and push that in the heap
+
+## K Closest Points To Origin
+- Distance from origin is x^2 + y^2 and we dont need to calculate root as for comparison it works fine
+- Again we care only about k closest points and not all points so we maintain a heap of size k 
+- Heap stores (-distance, point) , we use a negative distance to simulate a max heap which stores the kth closest point at the root
+- For every point, compute distance and push (-distance, point) Whenever heap size exceeds k , remove the farthest point
+- Return all points remaining in heap
+
+## Kth Largest Element In An Array
+- We want the Kth Largest element hence we maintain a min heap of k size 
+- Keeps only the largest k elements inside a min heap and the smallest element among them is the answer
+- For each number push into heap if size exceeds, pop and then return heap[0]
