@@ -13,7 +13,7 @@ solving Leetcode problems systematically topic wise
 
 # | Trees | 15 / 15 |
 
-# | Heap | 4 / 10 |
+# | Heaps & Priority Queue | 4 / 7 |
 
 
 ## Resources
