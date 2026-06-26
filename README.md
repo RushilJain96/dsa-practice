@@ -15,6 +15,8 @@ solving Leetcode problems systematically topic wise
 
 # | Heaps & Priority Queue | 7 / 7 |
 
+# | TRIES | 2 / 3 |
+
 
 ## Resources
 - [NeetCode Roadmap](https://neetcode.io)
