@@ -373,3 +373,31 @@
 - We want the Kth Largest element hence we maintain a min heap of k size 
 - Keeps only the largest k elements inside a min heap and the smallest element among them is the answer
 - For each number push into heap if size exceeds, pop and then return heap[0]
+
+## Task Scheduler
+- Pattern used : Max Heap+ Queue (cooldown)
+- Always execute the task with the highest remaining maximum frequency 
+- Use max heap for storing available tasks by remaining frequency
+- Use queue to store task that are currently cooling down, stores (remaining frequency, available time)
+- For every unit of time execute highest frequency task from heap , decrease its count, if it still remains push it to the cooldown queue, if cooldown expires push it back to heap
+- this continues until both queue and heap become empty
+
+## Design Twitter
+- Pattern : Hashmap + Heap (merge k sorted lists)
+- Each user's tweets are already stored in chronological order, feed is simply merging multiple sorted tweet lists and returning the latest 10 tweets.
+- Push only the newest tweet from each followed user into a Max Heap. Whenever one tweet is removed, push that user's next older tweet.
+- We maintain a followmap(user->set(followees)) and a tweetmap (user-> [(timestamp, tweetid)])
+- max heap contains (-timestamp, tweetId, userd, nextIndex)
+- in getnewsFeed() user follows themselves , push newest tweet from every followed user into heap, pop the newest tweet, add it to the answer , push same users next older tweet and repeat until 10 tweets collected 
+- in postTweet just append (timestamp, tweetId) and in follow() insert the followee in the set
+
+## Find Median From Data Stream
+- Pattern: Two Heaps , split numbers into two halves
+- Left Half: Max heap and stores the smaller numbers , Right Half: Min heap and stores the larger numbers
+- Median always lies between these two heaps
+- Important conditions : 
+    - max(left)<= min(right)
+    - heap sizes differ by atmost one
+- So , always compare new number with maxHeap root then insert into correct heap  and rebalance if size exceeds one by pushing element of the heavier side onto the other
+- if each size has equal elements median is the avg of the roots of both heaps otherwise the root of the bigger heap
+
