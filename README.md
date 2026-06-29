@@ -15,7 +15,9 @@ solving Leetcode problems systematically topic wise
 
 # | Heaps & Priority Queue | 7 / 7 |
 
-# | TRIES | 3 / 3 |
+# | Tries | 3 / 3 |
+
+# | Graphs | 3 / 13 |
 
 
 ## Resources
