@@ -401,3 +401,85 @@
 - So , always compare new number with maxHeap root then insert into correct heap  and rebalance if size exceeds one by pushing element of the heavier side onto the other
 - if each size has equal elements median is the avg of the roots of both heaps otherwise the root of the bigger heap
 
+----------------------------------------------------------------------------------------------------------------------------------
+
+## TRIES
+- Whenever you see these types:
+    - Prefix Search
+    - Autocomplete
+    - Dictionary Lookup
+    - Word Search
+    - Starts with -----> use tries
+
+- TrieNode Structure
+Each node contains:
+
+children:
+Dictionary mapping
+character -> TrieNode
+
+isEnd:
+Boolean indicating whether a complete word ends here.
+
+```python
+children = {}
+isEnd = False
+```
+
+## Implement Trie Prefix Node
+- Operations:
+    ## Insert(word)
+    - start from the root 
+    - for every character create node if missing
+    - else move to child
+    - mark last node as end of word
+
+    ## Search(word)
+    - Traverse the characters
+    - If any character is missing return false
+    - at the end return node.isEnd
+
+    ## StartsWith(prefix)
+    - Traverse characters
+    - If any character is missing return false
+    - else return true
+
+## Design Add And Search Words Data Structure
+- Pattern: Tries+ DFS
+- Normal trie search follows exactly one path but '.' can represent any character
+- This requires dfs
+- Adding the word is done in the same way, create node if character not in children else move to child and update isEnd
+- Within the search function we add a helper function:
+    ## dfs(node, index)
+    - this answers the question can the remaining substring word[index:] be matched starting from this trie node
+    - Two cases:
+        ### Normal Character
+        - if character is not in children return false 
+        - otherwise continue dfs with children 
+        
+        ### Wildcard '.'
+        - Try every child.
+        - ```python
+          for child in node.children.values():
+          ```
+        - If any recursive call return true return true else return false
+- BASE CASE:
+    when index== len(word) return node.isEnd
+
+## Word Search II
+- Pattern: Trie+ DFS+ Backtracking
+- Naive approach is for every word run dfs on board which is very expensive
+- Instead store every word in one trie. During DFS walk through the trie simultaneously
+- If current board path is no longer in the trie prefix stop immediately
+- Helper : 
+    ## DFS(row, col, trieNode, currentWord)
+    - Base cases include: Out of bounds, Visited cell, char not in trie--> stop searching
+    - DFS Steps:
+        1. Move into trie (node = node.children[ch])
+        2. append the charcter in so formed word
+        3. if node.isEnd found a word
+        4. Mark current cell visited (mark it temporarily with a diff symbol)
+        5. Explore up down left right 
+        6. Restore cell (Backtracking-> restore original character for next round of searching)
+
+----------------------------------------------------------------------------------------------------------------------------------
