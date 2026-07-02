@@ -17,7 +17,7 @@ solving Leetcode problems systematically topic wise
 
 # | Tries | 3 / 3 |
 
-# | Graphs | 10 / 13 |
+# | Graphs | 13 / 13 |
 
 
 ## Resources
