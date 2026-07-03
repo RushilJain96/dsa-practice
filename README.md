@@ -19,6 +19,8 @@ solving Leetcode problems systematically topic wise
 
 # | Graphs | 13 / 13 |
 
+# | Backtracking | 3 / 9 |
+
 
 ## Resources
 - [NeetCode Roadmap](https://neetcode.io)
