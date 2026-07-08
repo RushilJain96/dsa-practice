@@ -21,6 +21,8 @@ solving Leetcode problems systematically topic wise
 
 # | Backtracking | 9 / 9 |
 
+# | DP | 2 / 12 |
+
 
 ## Resources
 - [NeetCode Roadmap](https://neetcode.io)
