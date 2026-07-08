@@ -483,3 +483,21 @@ isEnd = False
         6. Restore cell (Backtracking-> restore original character for next round of searching)
 
 ----------------------------------------------------------------------------------------------------------------------------------
+
+## GRAPHS
+
+
+## Number Of Islands
+- Core Idea:
+    1. Traverse every cell and whenever an unvisited '1' is found:
+        - increment island count
+        - DFS all 4 directions to mark the entire connected 1 island as visited
+    2. Store (r,c) in visited 
+    3. Base conditions involve checking if the row or column are inside the range or (r,c) is in visited or the element is '0'
+
+- Optimised space complexity:
+    - Modifying the grid in place rather than maintaining a visited set
+    - change all the 1's to 0's during dfs , saves (m*n) space 
+
+
+
