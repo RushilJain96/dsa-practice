@@ -21,7 +21,7 @@ solving Leetcode problems systematically topic wise
 
 # | Backtracking | 9 / 9 |
 
-# | DP | 2 / 12 |
+# | Dynamic Programming | 3 / 12 |
 
 
 ## Resources
