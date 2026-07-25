@@ -23,7 +23,7 @@ solving Leetcode problems systematically topic wise
 
 # | Dynamic Programming | 12 / 12 |
 
-# | 2D Dynamic Programming | 2 / 11 |
+# | 2D Dynamic Programming | 3 / 11 |
 
 
 ## Resources
