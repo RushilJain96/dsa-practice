@@ -25,7 +25,7 @@ solving Leetcode problems systematically topic wise
 
 # | 2D Dynamic Programming | 11 / 11 |
 
-# | Greedy | 1 / 8 |
+# | Greedy | 2 / 8 |
 
 
 ## Resources
